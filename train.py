@@ -35,7 +35,7 @@ def train_model(
         img_scale: float = 0.5,
         amp: bool = False,
         weight_decay: float = 1e-8,
-        momentum: float = 0.999,
+        momentum: float = 0.99,
         gradient_clipping: float = 1.0,
 ):
     # 1. Create dataset

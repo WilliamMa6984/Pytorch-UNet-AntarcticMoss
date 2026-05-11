@@ -12,4 +12,5 @@ train_img.txt
 train_mask.txt
 valid_img.txt
 valid_mask.txt
+masks.txt
 _classes.csv

@@ -1,0 +1,1 @@
+py .\predict.py --model "checkpoints\checkpoint_epoch5.pth" --input "data\imgs\2_png.rf.075a244378977f8296297326e67e4af7.jpg" --output "mask.png" --scale 1
