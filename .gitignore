@@ -4,6 +4,12 @@ __pycache__/
 checkpoints/
 *.pth
 *.jpg
-venv/
+*.png
+.venv/
 .idea/
 wandb/
+train_img.txt
+train_mask.txt
+valid_img.txt
+valid_mask.txt
+_classes.csv
