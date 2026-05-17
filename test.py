@@ -1,23 +1,19 @@
-import argparse
 import logging
 import os
 
-import numpy as np
 import torch
-import torch.nn.functional as F
 from PIL import Image
-from torchvision import transforms
+import numpy as np
 
-from utils.data_loading import BasicDataset
 from unet import UNet
 from utils.utils import plot_img_and_mask
 
 import predict
 
 if __name__ == '__main__':
-    model_file = "checkpoints\\checkpoint_epoch5.pth"
-    no_save = False
-    viz = False
+    model_file = "checkpoints/checkpoint_epoch5.pth"
+    no_save = True
+    viz = True
     imgs_dir = "test_data/imgs"
     out_dir = "test_data/out"
     
@@ -46,7 +42,7 @@ if __name__ == '__main__':
         img = Image.open(filepath)
 
         mask = predict.predict_img(net=net,
-                        full_img=img,
+                        full_img=np.array(img),
                         scale_factor=1.0,
                         out_threshold=0.5,
                         device=device)
