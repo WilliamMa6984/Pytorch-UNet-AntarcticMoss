@@ -30,7 +30,7 @@ def predict_img(net,
         else:
             mask = torch.sigmoid(output) > out_threshold
 
-    return mask[0].long().squeeze().numpy()
+    return mask[0].long().squeeze().numpy(), mask
 
 
 def get_args():
@@ -100,7 +100,7 @@ if __name__ == '__main__':
         logging.info(f'Predicting image {filename} ...')
         img = Image.open(filename)
 
-        mask = predict_img(net=net,
+        mask, _ = predict_img(net=net,
                            full_img=img,
                            scale_factor=args.scale,
                            out_threshold=args.mask_threshold,
