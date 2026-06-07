@@ -1,0 +1,1 @@
+py .\train.py --scale 1 --epoch 50
