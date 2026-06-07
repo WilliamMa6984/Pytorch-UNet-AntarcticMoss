@@ -4,34 +4,34 @@
 
 import os
 
-dst = "../data/imgs"
+dst = "data/imgs"
 
-with open('train_img.txt') as my_file:
+with open('dataset/train_img.txt') as my_file:
     for filename in my_file:
-        src = os.path.join("train/", filename.strip() ) # .strip() to avoid un-wanted white spaces
+        src = os.path.join("dataset/train/", filename.strip() ) # .strip() to avoid un-wanted white spaces
         os.rename(src, os.path.join(dst, filename.strip()))
 
-dst = "../data/masks"
+dst = "data/masks"
 
-with open('train_mask.txt') as my_file:
+with open('dataset/train_mask.txt') as my_file:
     for filename in my_file:
-        src = os.path.join("train/", filename.strip() ) # .strip() to avoid un-wanted white spaces
+        src = os.path.join("dataset/train/", filename.strip() ) # .strip() to avoid un-wanted white spaces
         os.rename(src, os.path.join(dst, filename.strip()))
 
 
 
 
 
-dst = "../data/imgs"
+dst = "test_data/imgs"
 
-with open('valid_img.txt') as my_file:
+with open('dataset/valid_img.txt') as my_file:
     for filename in my_file:
-        src = os.path.join("valid/", filename.strip() ) # .strip() to avoid un-wanted white spaces
-        os.rename(src, os.path.join(dst, "valid"+filename.strip()))
+        src = os.path.join("dataset/valid/", filename.strip() ) # .strip() to avoid un-wanted white spaces
+        os.rename(src, os.path.join(dst, filename.strip()))
 
-dst = "../data/masks"
+dst = "test_data/masks"
 
-with open('valid_mask.txt') as my_file:
+with open('dataset/valid_mask.txt') as my_file:
     for filename in my_file:
-        src = os.path.join("valid/", filename.strip() ) # .strip() to avoid un-wanted white spaces
-        os.rename(src, os.path.join(dst, "valid"+filename.strip()))
+        src = os.path.join("dataset/valid/", filename.strip() ) # .strip() to avoid un-wanted white spaces
+        os.rename(src, os.path.join(dst, filename.strip()))
