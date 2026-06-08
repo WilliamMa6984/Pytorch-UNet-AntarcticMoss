@@ -108,7 +108,7 @@ if __name__ == '__main__':
 
         if not args.no_save:
             out_filename = out_files[i]
-            result = mask_to_image(mask, mask_values)
+            result, score = mask_to_image(mask, mask_values)
             result.save(out_filename)
             logging.info(f'Mask saved to {out_filename}')
 

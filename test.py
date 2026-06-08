@@ -32,10 +32,10 @@ def model_load(model_file):
     return net, device, mask_values
 
 def pr_curve():
-    model_file = "checkpoints/checkpoint_epoch5.pth"
-    imgs_dir = "test_data/archive_correct/imgs"
-    masks_dir = "test_data/archive_correct/masks"
-    # out_dir = "test_data/archive_correct/out"
+    model_file = "checkpoints/checkpoint_epoch6.pth"
+    imgs_dir = "test_data/imgs"
+    masks_dir = "test_data/masks"
+    # out_dir = "test_data/out"
 
     # thresholds = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 
@@ -85,7 +85,7 @@ def pr_curve():
     
 
 def model_test():
-    model_file = "checkpoints/checkpoint_epoch5.pth"
+    model_file = "checkpoints/checkpoint_epoch6.pth"
     no_save = False
     viz = False
     imgs_dir = "test_data/imgs"
@@ -113,7 +113,7 @@ def model_test():
         logging.info(f'True mask image {mask_filepath} ...')
         img = Image.open(filepath)
 
-        mask_pred = predict.predict_img(net=net,
+        mask_pred, _ = predict.predict_img(net=net,
                         full_img=img,
                         scale_factor=1.0,
                         out_threshold=0.3,
@@ -139,5 +139,5 @@ def model_test():
 
 
 if __name__ == '__main__':
-    # model_test()
-    pr_curve()
+    model_test()
+    # pr_curve()
