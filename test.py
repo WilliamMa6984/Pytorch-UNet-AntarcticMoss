@@ -31,11 +31,7 @@ def model_load(model_file):
 
     return net, device, mask_values
 
-def pr_curve():
-    model_file = "checkpoints/checkpoint_epoch6.pth"
-    imgs_dir = "test_data/imgs"
-    masks_dir = "test_data/masks"
-    # out_dir = "test_data/out"
+def pr_curve(model_file, imgs_dir, masks_dir):
 
     # thresholds = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 
@@ -84,13 +80,9 @@ def pr_curve():
     plt.show()
     
 
-def model_test():
-    model_file = "checkpoints/checkpoint_epoch6.pth"
-    no_save = False
-    viz = False
-    imgs_dir = "test_data/imgs"
-    masks_dir = "test_data/masks"
-    out_dir = "test_data/out"
+def model_test(model_file, imgs_dir, masks_dir, out_dir):
+    no_save = True
+    viz = True
     dice_score = 0
     num_val_batches = 0
     
@@ -139,5 +131,11 @@ def model_test():
 
 
 if __name__ == '__main__':
-    model_test()
-    # pr_curve()
+    model_file = "checkpoints/checkpoint_epoch3.pth"
+    # imgs_dir = "test_data/imgs"
+    # masks_dir = "test_data/masks"
+    imgs_dir = "test_data/archive_report/imgs"
+    masks_dir = "test_data/archive_report/masks"
+    out_dir = "test_data/out"
+    model_test(model_file, imgs_dir, masks_dir, out_dir)
+    # pr_curve(model_file, imgs_dir, masks_dir)
