@@ -1,1 +1,1 @@
-py .\train.py --scale 1 --epoch 10
+py .\train.py --scale 1 --epoch 10 --validation 30 --amp
