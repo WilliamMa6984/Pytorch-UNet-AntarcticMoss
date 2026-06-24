@@ -26,12 +26,12 @@ dst = "test_data/imgs"
 
 with open('dataset/valid_img.txt') as my_file:
     for filename in my_file:
-        src = os.path.join("dataset/valid/", filename.strip() ) # .strip() to avoid un-wanted white spaces
+        src = os.path.join("dataset/test/", filename.strip() ) # .strip() to avoid un-wanted white spaces
         os.rename(src, os.path.join(dst, filename.strip()))
 
 dst = "test_data/masks"
 
 with open('dataset/valid_mask.txt') as my_file:
     for filename in my_file:
-        src = os.path.join("dataset/valid/", filename.strip() ) # .strip() to avoid un-wanted white spaces
+        src = os.path.join("dataset/test/", filename.strip() ) # .strip() to avoid un-wanted white spaces
         os.rename(src, os.path.join(dst, filename.strip()))
